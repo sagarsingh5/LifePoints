@@ -5,14 +5,18 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 
 const { height, width } = Dimensions.get("screen");
 
-export default function Cards({ cardWidth }) {
+export default function Cards({ cardWidth, onPress }) {
   //   console.log(height, width);
   return (
-    <View style={[styles.container, { width: cardWidth }]}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.container, { width: cardWidth }]}
+    >
       <ImageBackground
         style={{ height: "100%", width: "100%", justifyContent: "flex-end" }}
         source={require("../../assets/nike.png")}
@@ -33,7 +37,7 @@ export default function Cards({ cardWidth }) {
           </Text>
         </View>
       </ImageBackground>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -42,7 +46,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: "#171732",
 
-    height: height * 0.75,
+    height: height * 0.65,
     overflow: "hidden",
     marginHorizontal: width / 36,
   },

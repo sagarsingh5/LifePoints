@@ -7,6 +7,7 @@ import {
   Modal,
   TouchableOpacity,
   Alert,
+  Button,
 } from "react-native";
 import AppButton from "./AppButton";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -27,7 +28,7 @@ export default function ModalScreen({ modalVisible, setModalVisible }) {
     >
       <View style={styles.container}>
         {screen === "1" && (
-          <View>
+          <View style={{ justifyContent: "space-between" }}>
             <View style={{ width: "100%", height: "40%" }}>
               <Image
                 style={{ height: "100%", width: "100%" }}
@@ -103,7 +104,10 @@ export default function ModalScreen({ modalVisible, setModalVisible }) {
             }}
           >
             <TouchableOpacity
-              onPress={() => setScreen("1")}
+              onPress={() => {
+                setModalVisible(false);
+                setScreen("1");
+              }}
               style={[styles.close, { left: 10, top: 10, right: null }]}
             >
               <MaterialCommunityIcons
@@ -283,15 +287,13 @@ export default function ModalScreen({ modalVisible, setModalVisible }) {
                   <AppTextInput placeholder="address" />
                 </View>
               </View>
-              <View style={{ width: "100%", paddingHorizontal: 10 }}>
-                <AppButton
-                  title="BUY NOW"
-                  backgroundColor="#2578E0"
-                  //   style={styles.button}
-                  onPress={() => setScreen("2")}
-                />
-              </View>
             </View>
+            <AppButton
+              title="BUY NOW"
+              backgroundColor="#2578E0"
+              style={styles.button}
+              onPress={() => setScreen("2")}
+            />
             <TouchableOpacity
               onPress={() => {
                 setScreen("1");
@@ -341,10 +343,14 @@ const styles = StyleSheet.create({
     right: 0,
     // top: -15,
     borderRadius: 30,
-    // backgroundColor: "red",
+    backgroundColor: "#000",
     zIndex: 10,
     padding: 10,
     alignItems: "center",
     justifyContent: "center",
+  },
+  button: {
+    position: "absolute",
+    top: 390,
   },
 });

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { View, Text, StyleSheet, ImageBackground, Image } from "react-native";
 import AppImage from "../components/AppImage";
 
-export default function AboutScreen() {
+export default function AboutScreen({ navigation: { goBack } }) {
   const [like, setLike] = useState(false);
   const [disLike, setDisLike] = useState(false);
   return (
@@ -17,6 +17,7 @@ export default function AboutScreen() {
         size={25}
         borderWidth={0}
         style={styles.icon}
+        onPress={() => goBack()}
       />
       <LinearGradient
         colors={["transparent", "#0E0E2C", "#1F142B", "#00001F"]}
@@ -79,7 +80,7 @@ export default function AboutScreen() {
 
 const styles = StyleSheet.create({
   container: { flex: 1, paddingHorizontal: 15, paddingTop: 50 },
-  icon: { margin: 15 },
+  icon: { marginTop: 25, marginLeft: 15 },
   text: { color: "#fff", marginVertical: 10 },
   up: { marginRight: 10 },
   image: {

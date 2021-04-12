@@ -5,7 +5,7 @@ import ModalScreen from "../components/ModalScreen";
 import Screen from "../components/Screen";
 import ShoppingCards from "../components/ShoppingCards";
 
-export default function ShoppingScreen() {
+export default function ShoppingScreen({ navigation: { navigate, goBack } }) {
   const [modalVisible, setModalVisible] = useState(false);
   const blocks = [
     {
@@ -51,7 +51,7 @@ export default function ShoppingScreen() {
   ];
   return (
     <Screen style={styles.container}>
-      <Header />
+      <Header onPress={() => navigate("ProfileScreen")} />
       <View style={{ padding: 15 }}>
         <Text
           style={[

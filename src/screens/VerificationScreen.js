@@ -90,7 +90,7 @@ export default function VerificationScreen({
         <AppButton
           title="Verify"
           backgroundColor="#2679E1"
-          onPress={() => navigate("TabNav")}
+          onPress={() => navigate("AppNav")}
         />
         <Text onPress={() => navigate("LoginScreen")} style={styles.text}>
           Have an account Login

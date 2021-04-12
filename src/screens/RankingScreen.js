@@ -52,7 +52,7 @@ export default function RankingScreen({ navigation: { navigate, goBack } }) {
   ];
   return (
     <Screen style={styles.container}>
-      <Header />
+      <Header onPress={() => navigate("ProfileScreen")} />
       <View style={styles.header}>
         <Text style={[styles.text, { textTransform: "uppercase" }]}>
           Ranking

@@ -3,10 +3,10 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import Header from "../components/Header";
 import Screen from "../components/Screen";
 
-export default function BarCodeScreen() {
+export default function BarCodeScreen({ navigation: { navigate, goBack } }) {
   return (
     <Screen>
-      <Header />
+      <Header onPress={() => navigate("ProfileScreen")} />
       <View
         style={{
           flex: 1,

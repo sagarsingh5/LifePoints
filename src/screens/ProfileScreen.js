@@ -1,14 +1,21 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import AppImage from "../components/AppImage";
 import Screen from "../components/Screen";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ navigation: { navigate, goBack } }) {
   return (
     <Screen style={styles.container}>
       <View style={styles.header}>
         <View style={[styles.header, { paddingHorizontal: 0 }]}>
-          <AppImage height={50} icon="arrow-left" size={25} borderWidth={0} />
+          <AppImage
+            height={50}
+            icon="arrow-left"
+            size={25}
+            borderWidth={0}
+            onPress={() => goBack()}
+          />
           <Text style={styles.text}>Profile</Text>
         </View>
         <Text style={styles.text}>Logout</Text>
@@ -20,11 +27,35 @@ export default function ProfileScreen() {
           height={110}
         />
       </View>
-      <Text
-        style={{ alignSelf: "center", color: "#fff", fontSize: 20, margin: 20 }}
+      <View
+        style={{
+          flexDirection: "row",
+          // backgroundColor: "red",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        Name Name
-      </Text>
+        <Text
+          style={{
+            // alignSelf: "center",
+            color: "#fff",
+            fontSize: 20,
+            margin: 20,
+          }}
+        >
+          Name Name
+        </Text>
+        <TouchableOpacity
+          onPress={() => navigate("EditProfileScreen")}
+          style={{ alignSelf: "center" }}
+        >
+          <MaterialCommunityIcons
+            name="account-edit-outline"
+            size={26}
+            color="#fff"
+          />
+        </TouchableOpacity>
+      </View>
       <View>
         <View
           style={{

@@ -4,15 +4,25 @@ import AppImage from "../components/AppImage";
 import AppTextInput from "../components/AppTextInput";
 import Screen from "../components/Screen";
 
-export default function EditProfileScreen() {
+export default function EditProfileScreen({
+  navigation: { navigate, goBack },
+}) {
   return (
     <Screen style={styles.container}>
       <View style={styles.header}>
         <View style={[styles.header, { paddingHorizontal: 0 }]}>
-          <AppImage height={50} icon="arrow-left" size={25} borderWidth={0} />
+          <AppImage
+            height={50}
+            icon="arrow-left"
+            size={25}
+            borderWidth={0}
+            onPress={() => goBack()}
+          />
           <Text style={styles.text}>Edit Profile</Text>
         </View>
-        <Text style={styles.text}>Done</Text>
+        <Text onPress={() => goBack()} style={styles.text}>
+          Done
+        </Text>
       </View>
       <View style={styles.circle}>
         <AppImage

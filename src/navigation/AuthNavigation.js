@@ -6,7 +6,8 @@ import RegisterScreen from "../screens/RegisterScreen";
 import VerificationScreen from "../screens/VerificationScreen";
 import ForgotPassword from "../screens/ForgotPassword";
 import ResetPassword from "../screens/ResetPassword";
-import TabNavigation from "./TabNavigation";
+// import TabNavigation from "./TabNavigation";
+import AppNavigation from "./AppNavigation";
 // import BarCodeScreen from "../screens/BarCodeScreen";
 // import RankingScreen from "../screens/RankingScreen";
 // import ShoppingScreen from "../screens/ShoppingScreen";
@@ -21,7 +22,7 @@ const AuthNavigation = () => {
       <Stack.Screen name="VerificationScreen" component={VerificationScreen} />
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       <Stack.Screen name="ResetPassword" component={ResetPassword} />
-      <Stack.Screen name="TabNav" component={TabNavigation} />
+      <Stack.Screen name="AppNav" component={AppNavigation} />
     </Stack.Navigator>
   );
 };

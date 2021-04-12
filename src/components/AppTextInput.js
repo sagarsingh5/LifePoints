@@ -18,7 +18,7 @@ export default function AppTextInput({
       <View style={styles.input}>
         <TextInput
           style={[styles.text, { fontSize: height / 3 }]}
-          defaultValue="Holla"
+          // defaultValue="Holla"
           {...otherProps}
         />
         {icon && <MaterialCommunityIcons name="check" size={22} color="#fff" />}

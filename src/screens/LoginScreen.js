@@ -20,7 +20,7 @@ export default function LoginScreen({ navigation: { navigate } }) {
         <AppButton
           title="Login"
           backgroundColor="#2679E1"
-          onPress={() => navigate("TabNav")}
+          onPress={() => navigate("AppNav")}
           style={styles.button}
         />
         <Text
